@@ -1,0 +1,30 @@
+# install packages for pycairo
+sudo apt install libcairo2-dev pkg-config
+
+
+pip install numpy==1.21
+
+pip install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-20.04 wxPython
+
+
+git clone https://github.com/stefanmaar/psysmon.git
+
+
+pip install -e PFAD_ZUM_PSYSMON_ORDER_IN_DEM_SETUP.PY_LIEGT
+
+
+# install maria db and create project database and user
+
+sudo apt install mariadb-server
+
+# open mysql as root
+sudo mysql -u root
+
+create database if not exists psysmon_now;
+
+create user now@'localhost';
+
+grant all on psysmon_now.* to 'now'@'localhost';
+
+# open psysmon
+# Project / DataSources

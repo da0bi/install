@@ -1,0 +1,16 @@
+# install latest stable version of nodejs
+# following https://phoenixnap.com/kb/update-node-js-version
+sudo apt update
+sudo apt install nodejs
+npm cache clean -f
+npm install -g n
+sudo n stable
+
+# installations
+# bash lsp server
+sudo npm i -g bash-language-server
+# tldr
+sudo npm install -g tldr
+
+
+

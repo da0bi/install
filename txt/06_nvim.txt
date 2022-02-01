@@ -1,0 +1,42 @@
+#######
+# packer 
+######
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+
+#############
+# lsp servers
+#############
+# pyright, bash-language-server, and texlab lsp servers are installed within 
+# PYTHON3 (following 03_python.txt)
+# NODEJS (following 05_nodejs.txt)
+# RUST (following 02_rust.txt)
+# installation blocks
+
+
+#####################################
+# lualine symbols - install Nerd Font
+#####################################
+# download nerd font from e.g. https://github.com/ryanoasis/nerd-fonts
+# choose patched-fonts, e.g. 'Hack', then download *Complete.ttf file for Regular/Italic/Bold/BoldItalic
+# save *.ttf files in /usr/share/fonts/NerdFonts
+# run 'fc-cache -fv'
+# check with ' fc-list | grep 'Hack' ' if installed
+###########################################################
+# lualine symbols - change gnome terminal font to Nerd Font
+# following 
+#https://linuxconfig.org/how-to-install-tweak-tool-on-ubuntu-20-04-lts-focal-fossa-linux
+###########################################################
+# install gnome tweak with all extensions (last apt install)
+sudo add-apt-repository universe
+sudo apt install gnome-tweak-tool
+sudo apt install $(apt search gnome-shell-extension | grep ^gnome | cut -d / -f1)
+# start gnome-tweaks and change system monospace font
+$ gnome-tweaks
+# Set the system monospace font to e.g. "Hack Nerd Font Regular"
+# Leave in the Terminal's Font Preference the Custom Font option unchecked, .i.e use system font.
+
+
+
+
+

@@ -1,0 +1,30 @@
+# install latest wine version
+# see wine.txt
+
+# install snap following https://snapcraft.io/install/acrordrdc/mint
+# remove nosnap.pref and install snapd
+sudo rm /etc/apt/preferences.d/nosnap.pref
+sudo apt update
+sudo apt install snapd
+# restart 
+
+
+# install acrordrdc following https://github.com/mmtrt/acrordrdc
+sudo snap install acrordrdc
+snap connect acrordrdc:removable-media
+snap connect acrordrdc:cups-control
+# no updates -> erst nach erster Installation ($ acrordrdc) !!!!
+sudo snap disconnect acrordrdc:network
+
+# The Save As Dialog window is blank
+# https://github.com/mmtrt/acrordrdc/issues/20
+Work around
+
+As Describes in the comments of the bug by todd.martin.davis
+
+Menu : Edit --> Preferences (Ctrl+k)
+
+Preferences Dialog : Categories --> General
+Preferences Dialog : General : Basic Tools : UNCHECK Checkbox "Show online storage when saving files"
+
+# Problems with saving a document - finally worked with saving it over the 'Windows- folders' 

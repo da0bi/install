@@ -1,0 +1,24 @@
+sudo apt install python3-setuptools
+sudo apt install python3-pip
+sudo apt install python3-dev
+sudo apt install jupyter-core
+# global installation of following python packages - commented out for pip-installations↴
+sudo apt-get install -y python3-numpy python3-numpy-dev python3-scipy python3-matplotlib↴
+
+# add path in .bashrc
+PATH=$PATH:$HOME/.local/bin
+export PATH
+
+# pip installations
+pip install ipython
+pip install Jupyter
+#pip install numpy
+#pip install scipy
+#pip install matplotlib
+pip install pandas
+pip install obspy
+
+# nvim python lsp↴
+pip install pyright
+
+
