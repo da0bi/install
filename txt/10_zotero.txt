@@ -1,9 +1,0 @@
-# zotero installation following 
-# https://github.com/retorquere/zotero-deb
-
-wget -qO- https://apt.retorque.re/file/zotero-apt/install.sh | sudo bash
-sudo apt update
-sudo apt install zotero
-sudo apt install jurism
-
-

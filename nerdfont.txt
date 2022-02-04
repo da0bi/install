@@ -1,0 +1,28 @@
+#####################################
+# Installation guidelines 'Nerd Font'
+#####################################
+
+- Download nerd font from e.g. https://github.com/ryanoasis/nerd-fonts
+    -> Choose patched-fonts, e.g. 'Hack'
+    -> Download *Complete.ttf files for Regular/Italic/Bold/BoldItalic fonts
+
+- Save *.ttf files in /usr/share/fonts/NerdFonts
+
+- Run 'fc-cache -fv'
+
+- Check with ' fc-list | grep 'Hack' ' if nerd font is installed
+
+
+#########################################
+# Change gnome terminal font to Nerd Font
+#########################################
+
+-> following https://linuxconfig.org/how-to-install-tweak-tool-on-ubuntu-20-04-lts-focal-fossa-linux
+
+- Install gnome tweak with all extensions (-> NEOVIM block in install.sh)
+
+- Start gnome-tweaks with 'gnome-tweaks'
+
+- Under 'Fonts' change 'Monospace Text' to e.g. "Hack Nerd Font Regular"
+
+- If it's not working check in the terminal preferences if 'Custom Font' is unchecked

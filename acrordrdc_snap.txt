@@ -1,0 +1,29 @@
+##################################################
+# Acrobat Reader DC installation with snap package
+##################################################
+
+# Install latest wine version
+    -> see wine.txt
+
+# Enable snaps on Linux Mint 20 and install snapd package
+    -> sudo rm /etc/apt/preferences.d/nosnap.pref
+    -> sudo apt update
+    -> sudo apt install snapd
+    -> restart machine 
+
+# Install Acrobat Reader DC following https://github.com/mmtrt/acrordrdc
+    -> sudo snap install acrordrdc
+    -> snap connect acrordrdc:removable-media
+    -> snap connect acrordrdc:cups-control
+# AFTER firing up acrordrdc for the first time disable acrordrdc updates
+    -> sudo snap disconnect acrordrdc:network
+
+# PROBLEM: The 'Save As' dialog box is blank
+# for troubleshooting follow comments by todd.martin.davis in https://github.com/mmtrt/acrordrdc/issues/20
+    -> go to Edit/Preferences ('Ctrl+k')
+    -> in Preferences Categories go to 'General'
+    -> uncheck "Show online storage when saving files" in the 'Basic Tools' box
+
+# PROBLEM: can not always save document
+# Dialog box will pop up stating that there is no memory to do so
+    -> NO work around so far!!!

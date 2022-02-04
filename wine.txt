@@ -1,0 +1,19 @@
+####################################################
+# Setting up wine after installation (-> install.sh)
+####################################################
+
+# install mono package (Windows fonts)
+    -> sudo apt install mono-complete - WINE COULDN'T FIND!!!
+# following https://askubuntu.com/questions/841847/mono-package-for-wine-is-not-installed
+    -> Download wine-mono.msi from the official WineHQ site https://dl.winehq.org/wine/wine-mono/
+    -> Type 'wine64 uninstaller'
+    -> Press install from the uninstaller GUI and select the downloaded .msi package
+    -> DIDN'T WORK NEITHER !!!
+
+# evetnually did installaion over wine dialog box after starting wine with 'wineboot'
+
+# install Gecko packages
+    -> get Gecko msi files (x_86 + x86_64) from https://wiki.winehq.org/Gecko
+    -> if already exisiting, delete ~/.wine folder
+    -> put *msi files in ~/.cache/wine
+    -> start wine with e.g. 'winecfg', 'wineboot',...

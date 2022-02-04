@@ -1,0 +1,30 @@
+#######################################
+# Setting up mysql database for psysmon
+#######################################
+
+- Start msql as root
+    -> 'sudo mysql -u root'
+
+- Check existing databases and check if project database (e.g. 'psysmon_now') is maybe already existing
+
+- If not, create project database
+    -> 'CREATE DATABASE psysmon_now;'
+
+- Create database user
+    -> 'CREATE USER 'now'@'localhost';'
+
+- Grant all rights to user
+    -> 'GRANT ALL ON psysmon_now.* TO 'now'@'localhost';'
+
+
+##############################
+# Setting up a psysmon project
+##############################
+
+- Start psysmon with 'psysmon'
+
+- Initialize new project
+
+- Set DataSources for project
+
+
