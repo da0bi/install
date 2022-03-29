@@ -87,6 +87,7 @@ printf '\n...BASIC BLOCK FINISHED.\n'
 # RUST installation(s)
 ######
 # install rustup (https://rustup.rs)
+sudo apt install curl
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # assure that ~/.cargo/bin is in your PATH
 # update cargo to latest version
@@ -119,6 +120,7 @@ pip install Jupyter
 #pip install matplotlib
 pip install pandas
 pip install obspy
+pip install pipenv
 # nvim python lsp
 pip install pyright
 printf '\n...PYTHON BLOCK FINISHED.\n'
@@ -146,7 +148,7 @@ printf '\n...NODEJS BLOCK FINISHED.\n'
 sudo add-apt-repository ppa:neovim-ppa/stable
 # update
 sudo apt-get update
-# install
+# instal
 sudo apt install neovim
 # packer package manager
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
@@ -176,14 +178,32 @@ printf '\n...QGIS BLOCK FINISHED.\n'
 #########
 # install packages for pycairo
 sudo apt install libcairo2-dev pkg-config
-# install older numpy version (as long as there is no virtual environment like e.g. pipenv)
-pip install numpy==1.21
-# install wxpython with correct wheel for compilation
-pip install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-20.04 wxPython
 # clone psysmon into ~/Programs/psysmon
-git clone https://github.com/stefanmaar/psysmon.git ~/Programs/psysmon
-# add to python packages with 'pip install -e PFAD_ZUM_PSYSMON_ORDER_IN_DEM_SETUP.PY_LIEGT'
+git clone https://github.com/da0bi/psysmon.git ~/Programs/psysmon
+#'''
+##########
+# with pip
+##########
+# install older numpy version - currently necessary for obspy
+pip install numpy==1.21
+# install wxpython with correct wheel for compilation from https://www.wxpython.org/pages/downloads
+pip install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-20.04 wxPython
+# add to python packages with pip install -e PFAD_ZUM_PSYSMON_ORDER_IN_DEM_SETUP.PY_LIEGT
 pip install -e ~/Programs/psysmon
+'''
+#############
+# with pipenv
+#############
+cd ~/Programs/psysmon/
+# install older numpy version - currently necessary for obspy
+pipenv install numpy==1.21
+# install wxpython with correct wheel for compilation from https://www.wxpython.org/pages/downloads
+pipenv run pip install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-20.04 wxPython
+# add to python packages with pip install -e PFAD_ZUM_PSYSMON_ORDER_IN_DEM_SETUP.PY_LIEGT
+pipenv install -e .
+# change back to home
+cd
+'''
 # install maria db and follow psysmon.txt how to set it up
 sudo apt install mariadb-server
 printf '\n...PSYSMON BLOCK FINISHED.\n'
@@ -199,6 +219,7 @@ cd ~/Programs/pyrocko
 sudo python3 install_prerequisites.py
 # install with setup.py
 sudo python3 setup.py install
+cd
 printf '\n...PYROCKO BLOCK FINISHED.\n'
 
 ######
@@ -224,7 +245,10 @@ wget -qO- https://apt.retorque.re/file/zotero-apt/install.sh | sudo bash
 sudo apt update
 sudo apt install zotero
 sudo apt install jurism
-printf '\n...ZOTERO BLOCK FINISHED.\n'
+# sync zotero
+# install zotero connector for firefox
+# sync zotero
+# install zotero connector for firefoxrintf '\n...ZOTERO BLOCK FINISHED.\n'
 
 # Cleaning up
 sudo apt autoremove --purge 

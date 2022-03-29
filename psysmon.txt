@@ -1,3 +1,32 @@
+################################################
+# psysmon installation from my forked github rep
+################################################
+
+- for the individual commands see PSYSMON block in install.sh
+
+- Linux packages need to be installed for pycairo 
+
+- Clone github rep into ~/Programs/psysmon
+
+- two python packages need to be manually pre-installed
+    -> numpy (older version 1.21, because of obspy)
+    -> wxpython
+
+- one option is a general installation with pip
+
+- another option is with a virtual environment applying pipenv
+    -> NOT WORKING, there is a problem with wxpython and pipenv
+
+- wxPython:     
+    -> Best to manually install the OS-dependent wheel package  
+    from the wxPython hp (https://www.wxpython.org/pages/downloads/).
+    -> Installation just with pip downloads the source code and the compilation 
+    very likely fails.
+
+- Install psysmon package in development mode (-e flag)
+    -> Development mode makes it possible that software changes confirmed by git 
+    are also straight applied in psysmon.
+
 #######################################
 # Setting up mysql database for psysmon
 #######################################
