@@ -180,7 +180,7 @@ printf '\n...QGIS BLOCK FINISHED.\n'
 sudo apt install libcairo2-dev pkg-config
 # clone psysmon into ~/Programs/psysmon
 git clone https://github.com/da0bi/psysmon.git ~/Programs/psysmon
-#'''
+'''
 ##########
 # with pip
 ##########
@@ -199,11 +199,13 @@ cd ~/Programs/psysmon/
 pipenv install numpy==1.21
 # install wxpython with correct wheel for compilation from https://www.wxpython.org/pages/downloads
 pipenv run pip install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-20.04 wxPython
+# install future package - somehow necessary for pipenv
+pipenv install future
 # add to python packages with pip install -e PFAD_ZUM_PSYSMON_ORDER_IN_DEM_SETUP.PY_LIEGT
 pipenv install -e .
 # change back to home
 cd
-'''
+#'''
 # install maria db and follow psysmon.txt how to set it up
 sudo apt install mariadb-server
 printf '\n...PSYSMON BLOCK FINISHED.\n'

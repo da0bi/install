@@ -15,7 +15,7 @@
 - one option is a general installation with pip
 
 - another option is with a virtual environment applying pipenv
-    -> NOT WORKING, there is a problem with wxpython and pipenv
+    -> the python future package is necessary to run psysmon with pipenv 
 
 - wxPython:     
     -> Best to manually install the OS-dependent wheel package  
