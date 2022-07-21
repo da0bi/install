@@ -36,7 +36,7 @@
 
 - Check existing databases and check if project database (e.g. 'psysmon_now') is maybe already existing
 
-- If not, create project database
+- If not, create project database. The database needs to be named 'psysmon_'+ username!
     -> 'CREATE DATABASE psysmon_now;'
 
 - Create database user

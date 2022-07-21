@@ -214,13 +214,14 @@ printf '\n...PSYSMON BLOCK FINISHED.\n'
 # PYROCKO installation following
 # https://github.com/pyrocko/pyrocko
 #########
-# clone github repository for the squirrel branch
-git clone -b squirrel https://git.pyrocko.org/pyrocko/pyrocko.git ~/Programs/pyrocko
+# clone github repository
+git clone https://git.pyrocko.org/pyrocko/pyrocko.git ~/Programs/pyrocko
 cd ~/Programs/pyrocko
 # automated installation of all required packages
-sudo python3 install_prerequisites.py
+python3 install.py deps pip
 # install with setup.py
-sudo python3 setup.py install
+#python3 install.py user
+pip install -e .
 cd
 printf '\n...PYROCKO BLOCK FINISHED.\n'
 
@@ -243,7 +244,8 @@ printf '\n...WINE BLOCK FINISHED.\n'
 # ZOTERO and JURISM installation following 
 # https://github.com/retorquere/zotero-deb
 ########
-wget -qO- https://apt.retorque.re/file/zotero-apt/install.sh | sudo bash
+#wget -qO- https://apt.retorque.re/file/zotero-apt/install.sh | sudo bash
+curl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash
 sudo apt update
 sudo apt install zotero
 sudo apt install jurism
