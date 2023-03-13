@@ -123,6 +123,15 @@ pip install obspy
 pip install pipenv
 # nvim python lsp
 pip install pyright
+# python packages for the ruwai script
+#pip install logging
+#pip install pathlib
+#pip install datetime
+#pip install time
+#pip install subprocess
+pip install robotframework-sshlibrary
+
+
 printf '\n...PYTHON BLOCK FINISHED.\n'
 
 ########
@@ -223,6 +232,8 @@ python3 install.py deps pip
 #python3 install.py user
 pip install -e .
 cd
+# necessary to use live data monitoring of datacubes
+pip install pyserial
 printf '\n...PYROCKO BLOCK FINISHED.\n'
 
 ######
